@@ -67,11 +67,15 @@ namespace BangBang.Models
             {
                 j_Mira = partidas[datos.idPartida][1];
                 partidas[datos.idPartida][0].turno = false;
+                partidas[datos.idPartida][0].angulo_atacante = 0;
+                partidas[datos.idPartida][0].velocidad_atacante = 0; 
             }
             else
             {
                 j_Mira = partidas[datos.idPartida][0];
                 partidas[datos.idPartida][1].turno = false;
+                partidas[datos.idPartida][1].angulo_atacante = 0;
+                partidas[datos.idPartida][1].velocidad_atacante = 0;
             }
             j_Mira.velocidad_atacante = datos.velocidad;
             j_Mira.angulo_atacante = datos.angulo;        
