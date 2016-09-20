@@ -34,8 +34,9 @@ namespace BangBang.Controllers
         {
             Datos datos = new JavaScriptSerializer().Deserialize<Datos>(json);
             var client = new WebClient();
-            JObject jObject = JObject.Parse(client.DownloadString("https://graph.facebook.com/debug_token?input_token=" + datos.token + "&access_token=" + access_token));
-            bool valid = (bool)jObject["data"]["is_valid"];            
+            string tokenJson = client.DownloadString("https://graph.facebook.com/debug_token?input_token=" + datos.token + "&access_token=" + access_token);
+            JObject jObject = JObject.Parse(tokenJson);
+            bool valid = (bool)jObject["data"]["is_valid"];
             if (!valid)
             {
                 return Json(false, JsonRequestBehavior.AllowGet);
@@ -50,7 +51,8 @@ namespace BangBang.Controllers
         {
             DatosLanzamiento datos = new JavaScriptSerializer().Deserialize<DatosLanzamiento>(json);
             var client = new WebClient();
-            JObject jObject = JObject.Parse(client.DownloadString("https://graph.facebook.com/debug_token?input_token=" + datos.token + "&access_token=" + access_token));
+            string tokenJson = client.DownloadString("https://graph.facebook.com/debug_token?input_token=" + datos.token + "&access_token=" + access_token);
+            JObject jObject = JObject.Parse(tokenJson);
             bool valid = (bool)jObject["data"]["is_valid"];
             if (!valid)
             {
@@ -66,7 +68,8 @@ namespace BangBang.Controllers
             Datos datos = new JavaScriptSerializer().Deserialize<Datos>(json);
             Jugador resultado = new Jugador();
             var client = new WebClient();
-            JObject jObject = JObject.Parse(client.DownloadString("https://graph.facebook.com/debug_token?input_token=" + datos.token + "&access_token=" + access_token));
+            string tokenJson = client.DownloadString("https://graph.facebook.com/debug_token?input_token=" + datos.token + "&access_token=" + access_token);
+            JObject jObject = JObject.Parse(tokenJson);
             bool valid = (bool)jObject["data"]["is_valid"];
             if (!valid)
             {
