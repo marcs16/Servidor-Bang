@@ -1,18 +1,21 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace BangBang.Models
 {
 
     public class Estado
-    {
+    {        
         private static Dictionary<int, Jugador[]> partidas=new Dictionary<int, Jugador[]>();
         private static int nroPartidas = 0;
         public Datos InicioPartidaRegistro()
-        {
+        {           
             Jugador jugador = new Jugador();
             if (nroPartidas != 0)
             {

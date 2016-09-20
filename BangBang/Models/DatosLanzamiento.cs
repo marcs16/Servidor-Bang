@@ -12,5 +12,6 @@ namespace BangBang.Models
         public float angulo { get; set; }
         public float velocidad { get; set; }
         public bool blanco { get; set; }
+        public string token { get; set; }
     }
 }
