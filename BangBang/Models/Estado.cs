@@ -106,6 +106,10 @@ namespace BangBang.Models
                 j_Atacante = partidas[datos.idPartida][0];
                 yo = partidas[datos.idPartida][1];
             }
+            if(!yo.estado)
+            {
+                partidas.Remove(datos.idPartida);
+            }
             return yo;
             //retornar todo el jugador que realiza la consulta para evaluar el turno, el estado y simular el lanzamiento en la pantalla de quien espera turno              
                     
