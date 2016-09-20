@@ -14,7 +14,8 @@ namespace BangBang.Controllers
         public JsonResult IniciarPartida(string token)
         {
             var client = new WebClient();
-            JObject jObject = JObject.Parse(client.DownloadString("https://graph.facebook.com/debug_token?input_token="+token+"&access_token="+access_token));            
+            string tokenJson = client.DownloadString("https://graph.facebook.com/debug_token?input_token=" + token + "&access_token=" + access_token);
+            JObject jObject = JObject.Parse(tokenJson);            
             bool valid = (bool)jObject["data"]["is_valid"];
             Datos datos = new Datos();
             if (!valid)
@@ -22,7 +23,8 @@ namespace BangBang.Controllers
                 return Json(datos, JsonRequestBehavior.AllowGet);
             }
             Estado estado = new Estado();
-            datos =estado.InicioPartidaRegistro();            
+            datos =estado.InicioPartidaRegistro();
+            datos.token = tokenJson;   
             //string a = new JavaScriptSerializer().Serialize(datos);
             return Json(datos, JsonRequestBehavior.AllowGet);
                 
