@@ -24,7 +24,7 @@ namespace BangBang.Controllers
             }
             Estado estado = new Estado();
             datos =estado.InicioPartidaRegistro();
-            datos.token = tokenJson;   
+            datos.token = token;   
             //string a = new JavaScriptSerializer().Serialize(datos);
             return Json(datos, JsonRequestBehavior.AllowGet);
                 
