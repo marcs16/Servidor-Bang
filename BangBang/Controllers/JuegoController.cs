@@ -9,7 +9,7 @@ namespace BangBang.Controllers
 {
     public class JuegoController : Controller
     {
-        private string access_token = "1075448155884619|36f92fca67678fb00d2f516af2dbd942";
+        private string access_token = "EAAPSHUlOTEsBAGH7wQaHDkTTFHHhzX4HxkdFTviohVDHEWxWyGUUmCcl7go3gMGmTBUZAV4HOrQ43pI1Clydbvl3pprZAOvZANzW87fMVzq0GMkqzZA7ZBSXqXOBJ9A8Q6CyN0IS8ZA42rbJrAmavGG81oo8bWqECZBOri4neZCvZAwZDZD";
         // GET: Juego
         public JsonResult IniciarPartida(string token)
         {
